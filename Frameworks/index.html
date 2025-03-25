@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PageMaker</title>
+    <script src="funcoes.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-xl font-bold mb-4">Cabeçalho</h1>
+
+        <label class="font-semibold">Cor de fundo</label>
+        <select id="corFundo" class="w-full p-2 mt-1">
+            <option>--</option>
+            <option value="#FF0000">Vermelho</option>
+            <option value="#00FF00">Verde</option>
+            <option value="#0000FF">Azul</option>
+            <option value="#FFFF00">Amarelo</option>
+            <option value="#FFA500">Laranja</option>
+            <option value="#9900ff">Roxo</option>
+        </select>
+
+        <label class="font-semibold mt-4">Texto para Cabeçalho</label>
+        <input type="text" id="textoCabecalho" class="w-full p-2 mt-1">
+
+        <label class="font-semibold mt-4">Cor da Fonte</label>
+        <select id="corFonte" class="w-full p-2 mt-1">
+            <option>--</option>
+            <option value="#FF0000">Vermelho</option>
+            <option value="#00FF00">Verde</option>
+            <option value="#0000FF">Azul</option>
+            <option value="#FFFF00">Amarelo</option>
+            <option value="#FFA500">Laranja</option>
+            <option value="#9900ff">Roxo</option>
+        </select>
+
+        <label class="font-semibold mt-4">Tamanho Fonte</label>
+        <select id="tamFonte" class="w-full p-2 mt-1">
+            <option>--</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+        </select>
+
+        <h1 class="text-xl font-bold mt-6">Links</h1>
+        <label class="font-semibold">Texto para os links</label>
+        <input type="text" id="links" placeholder="link1;link2;link3..." class="w-full p-2 mt-1">
+
+        <label class="font-semibold mt-4">Cor do link</label>
+        <select id="corLinks" class="w-full p-2 mt-1">
+            <option>--</option>
+            <option value="#FF0000">Vermelho</option>
+            <option value="#00FF00">Verde</option>
+            <option value="#0000FF">Azul</option>
+            <option value="#FFFF00">Amarelo</option>
+            <option value="#FFA500">Laranja</option>
+            <option value="#9900ff">Roxo</option>
+        </select>
+
+        <label class="font-semibold mt-4">Estilo do link</label>
+        <div class="mt-1">
+            <label><input type="radio" name="estiloLinks" value="1" class="mr-1"> Sublinhado</label>
+            <label><input type="radio" name="estiloLinks" value="0" class="mr-1"> Não Sublinhado</label>
+        </div>
+
+        <button onclick="gerarCodigo()" class="mt-6 w-full bg-blue-500 text-white py-2">Gerar código</button>
+    </div>
+
+    <div class="max-w-2xl mx-auto mt-6">
+        <h2 class="text-lg font-bold mb-2">HTML</h2>
+        <textarea id="codeHTML" rows="10" class="w-full p-2"></textarea>
+        <button onclick="download('codeHTML','index.html')" class="mt-2 w-full bg-blue-500 text-white py-2">Download do código HTML</button>
+    </div>
+
+    <div class="max-w-2xl mx-auto mt-6">
+        <h2 class="text-lg font-bold mb-2">CSS</h2>
+        <textarea id="codeCSS" rows="10" class="w-full p-2"></textarea>
+        <button onclick="download('codeCSS','estilo.css')" class="mt-2 w-full bg-blue-500 text-white py-2">Download do código CSS</button>
+    </div>
+</body>
+</html>
