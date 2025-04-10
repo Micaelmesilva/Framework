@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <script src="funcoes.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <div class="max-w-2xl mx-auto">
+    <div class="max-w-2xl mx-auto p-4">
         <h1 class="text-xl font-bold mb-4">Cabeçalho</h1>
 
         <label class="font-semibold">Cor de fundo</label>
-        <select id="corFundo" class="w-full p-2 mt-1">
+        <select id="corFundo" class="w-full p-2 mt-1 border rounded-md">
             <option>--</option>
             <option value="#FF0000">Vermelho</option>
             <option value="#00FF00">Verde</option>
@@ -23,10 +25,10 @@
         </select>
 
         <label class="font-semibold mt-4">Texto para Cabeçalho</label>
-        <input type="text" id="textoCabecalho" class="w-full p-2 mt-1">
+        <input type="text" id="textoCabecalho" class="w-full p-2 mt-1 border rounded-md">
 
         <label class="font-semibold mt-4">Cor da Fonte</label>
-        <select id="corFonte" class="w-full p-2 mt-1">
+        <select id="corFonte" class="w-full p-2 mt-1 border rounded-md">
             <option>--</option>
             <option value="#FF0000">Vermelho</option>
             <option value="#00FF00">Verde</option>
@@ -37,7 +39,7 @@
         </select>
 
         <label class="font-semibold mt-4">Tamanho Fonte</label>
-        <select id="tamFonte" class="w-full p-2 mt-1">
+        <select id="tamFonte" class="w-full p-2 mt-1 border rounded-md">
             <option>--</option>
             <option value="12">12</option>
             <option value="13">13</option>
@@ -49,10 +51,10 @@
 
         <h1 class="text-xl font-bold mt-6">Links</h1>
         <label class="font-semibold">Texto para os links</label>
-        <input type="text" id="links" placeholder="link1;link2;link3..." class="w-full p-2 mt-1">
+        <input type="text" id="links" placeholder="link1;link2;link3..." class="w-full p-2 mt-1 border rounded-md">
 
         <label class="font-semibold mt-4">Cor do link</label>
-        <select id="corLinks" class="w-full p-2 mt-1">
+        <select id="corLinks" class="w-full p-2 mt-1 border rounded-md">
             <option>--</option>
             <option value="#FF0000">Vermelho</option>
             <option value="#00FF00">Verde</option>
@@ -67,27 +69,44 @@
             <label><input type="radio" name="estiloLinks" value="1" class="mr-1"> Sublinhado</label>
             <label><input type="radio" name="estiloLinks" value="0" class="mr-1"> Não Sublinhado</label>
         </div>
-            <div class="mb-3">
-<button type="button" class="btn border-secondary border-1 btn-success w-50 mb-3 fw-bolder mt-2" onclick="adicionaLink()" required>
-                                Adicionar Link
-</button>
-<div id="linksCriados" class="mb-3 fw-bolder mt-4 d-flex flex-column align-content-center ">
- 
-                            </div>
-</div>
-        <button onclick="gerarCodigo()" class="mt-6 w-full bg-blue-500 text-white py-2">Gerar código</button>
+
+        <div class="mb-3">
+            <button type="button" class="w-1/2 mb-3 bg-green-500 text-white py-2 rounded-md font-semibold mt-2"
+                onclick="adicionaLink()" required>
+                Adicionar Link
+            </button>
+            <div id="linksCriados" class="mb-3 mt-4 flex flex-col items-center">
+            </div>
+        </div>
+
+        <!-- Configurações adicionais para o título da página e tamanho do link -->
+        <h1 class="text-xl font-bold mt-6">Configurações Adicionais</h1>
+
+        <label class="font-semibold mt-4">Título da Página</label>
+        <input type="text" id="tituloPagina" class="w-full p-2 mt-1 border rounded-md" oninput="alterarTituloPagina()">
+
+
+       
+
+        <button onclick="downloadHTMLCSS()" class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md">Download HTML e
+            CSS</button>
+
+        <button onclick="gerarCodigo()" class="mt-6 w-full bg-blue-500 text-white py-2 rounded-md">Gerar código</button>
     </div>
 
-    <div class="max-w-2xl mx-auto mt-6">
+    <div class="max-w-2xl mx-auto mt-6 p-4">
         <h2 class="text-lg font-bold mb-2">HTML</h2>
-        <textarea id="codeHTML" rows="10" class="w-full p-2"></textarea>
-        <button onclick="download('codeHTML','index.html')" class="mt-2 w-full bg-blue-500 text-white py-2">Download do código HTML</button>
+        <textarea id="codeHTML" rows="10" class="w-full p-2 border rounded-md"></textarea>
+        <button onclick="download('codeHTML','index.html')"
+            class="mt-2 w-full bg-blue-500 text-white py-2 rounded-md">Download do código HTML</button>
     </div>
 
-    <div class="max-w-2xl mx-auto mt-6">
+    <div class="max-w-2xl mx-auto mt-6 p-4">
         <h2 class="text-lg font-bold mb-2">CSS</h2>
-        <textarea id="codeCSS" rows="10" class="w-full p-2"></textarea>
-        <button onclick="download('codeCSS','estilo.css')" class="mt-2 w-full bg-blue-500 text-white py-2">Download do código CSS</button>
+        <textarea id="codeCSS" rows="10" class="w-full p-2 border rounded-md"></textarea>
+        <button onclick="download('codeCSS','estilo.css')"
+            class="mt-2 w-full bg-blue-500 text-white py-2 rounded-md">Download do código CSS</button>
     </div>
 </body>
+
 </html>
